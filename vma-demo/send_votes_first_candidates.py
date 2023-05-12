@@ -29,7 +29,7 @@ for category in response.json():
                 "idA": elected["id"]
             })
         print(resp.status_code)
-    if category["type"] == "SONG" or category["type"] == "INSTRUMENTAL":
+    if category["type"] in ["SONG", "INSTRUMENTAL"]:
         elected = category["songs"][randint(0, len(category['songs'])-1)]
         payload = {
             "userId": user_id,

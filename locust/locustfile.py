@@ -34,7 +34,7 @@ class VmaVoting(HttpUser):
                         "idA": elected["id"]
                     })
                 print(resp.status_code)
-            if category["type"] == "SONG" or category["type"] == "INSTRUMENTAL":
+            if category["type"] in ["SONG", "INSTRUMENTAL"]:
                 elected = category["songs"][randint(0, len(category['songs']) - 1)]
                 resp = requests.post(
                     urlSong,

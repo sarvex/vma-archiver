@@ -17,7 +17,7 @@ headers["Cookie"] = f"votingId={generateUuuid()}"
 for category in response.json():
     print(category["category"])
     print(category)
-    if category["type"] == "SONG" or category["type"] == "INSTRUMENTAL":
+    if category["type"] in ["SONG", "INSTRUMENTAL"]:
         elected = category["songs"][0]
         payload = {
             "userId": generateUuuid(),
